@@ -48,6 +48,9 @@ gem 'fog-aws'
 gem 'activeadmin'
 gem 'devise'
 
+# SEO
+gem 'friendly_id', '~> 5.4.0'
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
