@@ -1,0 +1,6 @@
+<% @products.each do |product| %>
+
+<%= link_to product_path(product) do %>
+<%= image_tag product.cover_image.gallery.url %>
+<% end %>
+<% end %>
