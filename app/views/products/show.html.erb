@@ -1,7 +1,23 @@
 
 <%= link_to products_path do %>
-<h4>Back to products</h4>
+<h4>Back to store gallery</h4>
 <% end %>
 
-<%= @product.title %>
-<%= @product.description %>
+<section class="flexbox">
+  <div class="flex">
+      <%= image_tag @product.image_1.show.url %>
+  </div>
+  <div class="flex">
+      <%= @product.title %>
+  </div>
+</section>
+
+<h4>Description:</h4><%= @product.description %>
+
+<div class="product-variants">
+  <% @product.product_variants.each do |product_variant| %>
+    <%= product_variant.item %>
+    <%= product_variant.size %>
+    <%= product_variant.color %>
+  <% end %>
+</div>

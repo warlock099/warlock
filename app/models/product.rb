@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :cover_image, presence: true
 
+  has_many :product_variants
+
   mount_uploader :cover_image, ProductImageUploader
   mount_uploader :image_1, ProductImageUploader
   mount_uploader :image_2, ProductImageUploader

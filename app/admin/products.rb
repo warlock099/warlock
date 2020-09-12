@@ -18,6 +18,7 @@ ActiveAdmin.register Product do
     column :description
     column :price
     column :is_sold_out
+    column :product_variants
     actions
   end
 

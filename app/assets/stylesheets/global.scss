@@ -1,4 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+
+
+$body-font: "Roboto Slab";
+
+
+
 body {
   width: 100vw;
   height: 100vh;
+  font-family: $body-font;
+}
+
+section.flexbox {
+  display:flex;
+  flex-flow: row nowrap;
+
+  .flex {
+    width: 50%;
+  }
+
+
 }
