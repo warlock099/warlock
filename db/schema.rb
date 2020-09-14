@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_11_231902) do
+ActiveRecord::Schema.define(version: 2020_09_13_131410) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -78,6 +78,11 @@ ActiveRecord::Schema.define(version: 2020_09_11_231902) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -89,6 +94,32 @@ ActiveRecord::Schema.define(version: 2020_09_11_231902) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "cart_id", null: false
+    t.integer "selected_variant_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_order_items_on_cart_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["selected_variant_id"], name: "index_order_items_on_selected_variant_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "postal_code"
+    t.string "country"
+    t.string "stripe_token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "product_variants", force: :cascade do |t|
@@ -115,6 +146,15 @@ ActiveRecord::Schema.define(version: 2020_09_11_231902) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.index ["slug"], name: "index_products_on_slug", unique: true
+  end
+
+  create_table "selected_variants", force: :cascade do |t|
+    t.integer "product_variant_id", null: false
+    t.integer "order_item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_item_id"], name: "index_selected_variants_on_order_item_id"
+    t.index ["product_variant_id"], name: "index_selected_variants_on_product_variant_id"
   end
 
   create_table "spree_addresses", force: :cascade do |t|
@@ -1180,7 +1220,12 @@ ActiveRecord::Schema.define(version: 2020_09_11_231902) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "order_items", "carts"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "selected_variants"
   add_foreign_key "product_variants", "products"
+  add_foreign_key "selected_variants", "order_items"
+  add_foreign_key "selected_variants", "product_variants"
   add_foreign_key "spree_oauth_access_grants", "spree_oauth_applications", column: "application_id"
   add_foreign_key "spree_oauth_access_tokens", "spree_oauth_applications", column: "application_id"
 end

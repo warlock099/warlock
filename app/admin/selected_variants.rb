@@ -1,31 +1,16 @@
-ActiveAdmin.register ProductVariant do
+ActiveAdmin.register SelectedVariant do
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :item, :size, :color, :price, :product_id
-
-
-
-  form do |f|
-   inputs 'Details' do
-     f.semantic_errors
-     f.input :color, as: :text
-     f.input :item
-     f.input :price
-     f.input :size
-     f.input :product_id
-   end
-
-   f.actions
- end
+  permit_params :product_variant_id, :order_item_id
   #
   # or
   #
   # permit_params do
-  #   permitted = [:item, :size, :color, :price, :product_id]
+  #   permitted = [:product_variant_id, :order_item_id]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end

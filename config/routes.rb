@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :product_variants
-  end 
+  end
+
+  resources :selected_variants 
 
   root "products#index"
 

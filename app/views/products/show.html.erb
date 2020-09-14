@@ -8,16 +8,26 @@
       <%= image_tag @product.image_1.show.url %>
   </div>
   <div class="flex">
-      <%= @product.title %>
+      <h2><%= @product.title %></h2>
+
+      <div class="product-description">
+        <h5>Description:</h5>
+          <p><%= @product.description %></p>
+      </div>
   </div>
 </section>
 
-<h4>Description:</h4><%= @product.description %>
+
+<%= simple_form_for [@product, @product_variant] do |f| %>
+<%= f.input :id, as: :select, collection: @product_variants %>
+<% end %>
+
 
 <div class="product-variants">
   <% @product.product_variants.each do |product_variant| %>
-    <%= product_variant.item %>
-    <%= product_variant.size %>
-    <%= product_variant.color %>
+    <%= product_variant.item %> /
+    <%= product_variant.size %> /
+    <%= product_variant.color %> /
+    $<%= product_variant.price %>
   <% end %>
 </div>

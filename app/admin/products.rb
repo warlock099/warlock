@@ -14,6 +14,7 @@ ActiveAdmin.register Product do
     column "Cover Image" do |product|
       image_tag product.cover_image.thumb.url
     end
+    column :id
     column :title
     column :description
     column :price

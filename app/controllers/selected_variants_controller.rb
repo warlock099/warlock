@@ -1,0 +1,3 @@
+class SelectedVariantsController < ApplicationController
+
+end

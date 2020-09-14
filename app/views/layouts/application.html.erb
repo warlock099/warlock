@@ -10,7 +10,20 @@
     <%= favicon_link_tag asset_path('WFav.png') %>
   </head>
 
-  <body>
+    <body>
+
+  <header>
+        
+
+          <%= image_tag "Wlogo.svg" %>
+
+  <nav>
+    <a href="#">Cart (0)</a>
+  </nav>
+
+  </header>
+
+
     <%= yield %>
   </body>
 </html>
