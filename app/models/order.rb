@@ -13,9 +13,12 @@ class Order < ApplicationRecord
   validates :city, presence: true
   validates :country, presence: true
 
+
+  accepts_nested_attributes_for :order_items
+
   def add_from_cart(cart)
   cart.order_items.all.each do |item|
-    self.order_items.build(product: item.product, quantity: item.quantity)
+    self.order_items.build(product_variant: item.product_variant, quantity: item.quantity)
   end
 end
 
@@ -36,7 +39,7 @@ end
    @total = 0
 
    order_items.all.each do |item|
-     @total = @total + item.product.price_in_dollars * item.quantity
+     @total = @total + item.product_variant.price_in_dollars * item.quantity
    end
 
    @total

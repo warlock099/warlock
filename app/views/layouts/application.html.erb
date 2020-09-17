@@ -13,12 +13,16 @@
     <body>
 
   <header>
-        
 
+          <%= link_to root_path do %>
           <%= image_tag "Wlogo.svg" %>
+          <% end %>
 
   <nav>
-    <a href="#">Cart (0)</a>
+
+    <%= link_to cart_path do %>
+         Cart (<%= number_to_currency @current_cart.total_price_in_dollars %>)
+       <% end %>
   </nav>
 
   </header>

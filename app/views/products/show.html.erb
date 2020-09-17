@@ -18,16 +18,17 @@
 </section>
 
 
-<%= simple_form_for [@product, @product_variant] do |f| %>
-<%= f.input :id, as: :select, collection: @product_variants %>
+<%= simple_form_for [@product_variant, @order_item] do |f| %>
+  <%= f.input :quantity %>
+
+  <%= f.button :submit, "Add to cart" %>
 <% end %>
 
 
-<div class="product-variants">
-  <% @product.product_variants.each do |product_variant| %>
-    <%= product_variant.item %> /
-    <%= product_variant.size %> /
-    <%= product_variant.color %> /
-    $<%= product_variant.price %>
-  <% end %>
-</div>
+
+Product selection: <br>
+<select name="product[product_variant_id]">
+    <% ProductVariant.all.each do |product_variant| %>
+        <option value="<%= product_variant.id %>"><%= product_variant.item %>/<%= product_variant.size %>/<%= product_variant.color %>/$<%= product_variant.price %></option>
+    <% end %>
+</select>

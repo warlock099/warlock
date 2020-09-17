@@ -3,11 +3,20 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  # we want to see multiple products
   resources :products do
-    resources :product_variants
+    resources :product_variants do
+      resources :order_items
+    end
   end
 
-  resources :selected_variants 
+  resources :selected_variants
+
+  # we want a user to only have one cart
+  resource :cart
+
+   # we want our users to order multiple times
+  resources :orders
 
   root "products#index"
 

@@ -16,10 +16,18 @@ class ProductVariantsController < ApplicationController
 
   def show
     @product_variant = @Product.product_variants.find_by(params[:id])
+
+    # if the product is already in the cart
+   @order_item = @current_cart.order_items.find_by(product_variant: [@product, @product_variant])
+
+   if @order_item.nil?
+     # if it doesn't exist in the cart
+     @order_item = @current_cart.order_items.new(product_variant: [@product, @product_variant], quantity: 1)
+   end
   end
 
   def destroy
-  end 
+  end
 
 
   def form_params

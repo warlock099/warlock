@@ -14,8 +14,11 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     @product = Product.friendly.find(params[:id])
     @product_variant = ProductVariant.find_by(params[:product_variant_id])
+
+
   end
 
   def edit

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_131410) do
+ActiveRecord::Schema.define(version: 2020_09_17_092620) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 2020_09_13_131410) do
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "product_variant_id"
     t.index ["cart_id"], name: "index_order_items_on_cart_id"
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["selected_variant_id"], name: "index_order_items_on_selected_variant_id"
