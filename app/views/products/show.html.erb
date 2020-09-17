@@ -28,7 +28,7 @@
 
 Product selection: <br>
 <select name="product[product_variant_id]">
-    <% ProductVariant.all.each do |product_variant| %>
-        <option value="<%= product_variant.id %>"><%= product_variant.item %>/<%= product_variant.size %>/<%= product_variant.color %>/$<%= product_variant.price %></option>
+    <% @product.product_variants.each do |product_variant| %>
+        <option value="<%= product_variant.id %>"><%= product_variant.item %>/<%= product_variant.size %>/<%= product_variant.color %>/<%= number_to_currency product_variant.price_in_dollars %></option>
     <% end %>
 </select>

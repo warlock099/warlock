@@ -21,7 +21,7 @@
   <nav>
 
     <%= link_to cart_path do %>
-         Cart (<%= @current_cart.total_quantity %>)
+         Cart (<%= @current_cart.total_quantity %> items, <%= number_to_currency @current_cart.total_price_in_dollars %>)
        <% end %>
   </nav>
 

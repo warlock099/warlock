@@ -36,6 +36,9 @@ class ProductsController < ApplicationController
     render "edit"
   end
 
+  def destroy
+  end 
+
 
 
   def product_params

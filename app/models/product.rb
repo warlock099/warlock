@@ -9,7 +9,8 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :cover_image, presence: true
 
-  has_many :product_variants
+  has_many :product_variants, :dependent => :destroy
+
   has_many :order_items, through: :product_variants
 
 
