@@ -21,11 +21,17 @@
   <nav>
 
     <%= link_to cart_path do %>
-         Cart (<%= number_to_currency @current_cart.total_price_in_dollars %>)
+         Cart (<%= @current_cart.total_quantity %>)
        <% end %>
   </nav>
 
   </header>
+
+  <% if flash[:success].present? %>
+   <div class="flash-success">
+     <%= flash[:success] %>
+   </div>
+ <% end %>
 
 
     <%= yield %>

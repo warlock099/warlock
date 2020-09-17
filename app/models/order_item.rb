@@ -1,9 +1,10 @@
 class OrderItem < ApplicationRecord
 
-  belongs_to :order
-  belongs_to :cart
-  belongs_to :selected_variants
-  belongs_to :product_variants
+  belongs_to :order, optional: true
+  belongs_to :cart, optional: true
+  belongs_to :product_variant
+  belongs_to :product
 
-  
+
+
 end

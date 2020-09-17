@@ -18,7 +18,7 @@
 </section>
 
 
-<%= simple_form_for [@product_variant, @order_item] do |f| %>
+<%= simple_form_for [@product, @product_variant, @order_item] do |f| %>
   <%= f.input :quantity %>
 
   <%= f.button :submit, "Add to cart" %>

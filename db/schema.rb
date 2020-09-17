@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_17_092620) do
+ActiveRecord::Schema.define(version: 2020_09_17_125249) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -97,16 +97,17 @@ ActiveRecord::Schema.define(version: 2020_09_17_092620) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "order_id", null: false
-    t.integer "cart_id", null: false
-    t.integer "selected_variant_id", null: false
+    t.integer "cart_id"
+    t.integer "product_id"
+    t.integer "product_variant_id"
+    t.integer "order_id"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "product_variant_id"
     t.index ["cart_id"], name: "index_order_items_on_cart_id"
     t.index ["order_id"], name: "index_order_items_on_order_id"
-    t.index ["selected_variant_id"], name: "index_order_items_on_selected_variant_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
+    t.index ["product_variant_id"], name: "index_order_items_on_product_variant_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -1223,7 +1224,8 @@ ActiveRecord::Schema.define(version: 2020_09_17_092620) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "order_items", "carts"
   add_foreign_key "order_items", "orders"
-  add_foreign_key "order_items", "selected_variants"
+  add_foreign_key "order_items", "product_variants"
+  add_foreign_key "order_items", "products"
   add_foreign_key "product_variants", "products"
   add_foreign_key "selected_variants", "order_items"
   add_foreign_key "selected_variants", "product_variants"
