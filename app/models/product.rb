@@ -11,8 +11,7 @@ class Product < ApplicationRecord
 
   has_many :product_variants, :dependent => :destroy
 
-  has_many :order_items, through: :product_variants
-
+  has_many :order_items
 
   mount_uploader :cover_image, ProductImageUploader
   mount_uploader :image_1, ProductImageUploader

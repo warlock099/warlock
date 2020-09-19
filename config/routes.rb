@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # we want to see multiple products
-  resources :products do
+  resources :products
+
     resources :product_variants do
       resources :order_items
     end
-  end
+
 
   resources :selected_variants
 

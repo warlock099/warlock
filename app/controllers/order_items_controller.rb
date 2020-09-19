@@ -3,7 +3,6 @@ class OrderItemsController < ApplicationController
 
   def create
 
-@product = Product.friendly.find(params[:product_id])
 
 # find the product_variant
 @product_variant = ProductVariant.find(params[:product_variant_id])
@@ -11,11 +10,13 @@ class OrderItemsController < ApplicationController
 # quantity? - comes from the form data
 @quantity = form_params[:quantity]
 
-@current_cart.order_items.create(product: @product, product_variant: @product_variant, quantity: @quantity)
+@order_item = @current_cart.order_items.new(form_params)
+
+@order_item.save
 
 flash[:success] = "Thanks for adding to your cart"
 
-  redirect_to product_path(@product)
+  redirect_to root_path
 
 end
 
@@ -35,7 +36,7 @@ redirect_to cart_path
 end
 
 def destroy
-@product = Product.friendly.find(params[:product_id])
+
 @product_variant = ProductVariant.find(params[:product_variant_id])
 @order_item = OrderItem.find(params[:id])
 
@@ -48,7 +49,7 @@ end
 
 
 def form_params
-params.require(:order_item).permit(:quantity)
+params.require(:order_item).permit(:quantity, :product_variant_id)
 end
 
 
