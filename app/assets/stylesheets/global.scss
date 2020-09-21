@@ -20,6 +20,54 @@ body {
   background-color: white;
 }
 
+input[type=submit] {
+  background: #524FFD;
+  color: white;
+  border-color: rgba(122, 168, 255, 0.2);
+  margin-top: 10px;
+  margin-left: 25px;
+  border-radius: 8px;
+  padding: 8px 24px;
+  width: 200px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+select.select_product_class {
+  border-color: rgba(122, 168, 255, 0.2);
+  color: green;
+}
+
+div, form {
+    margin: 0 0 0 25px;
+  }
+
+
+  label {
+    display: block;
+    color: #524FFD;
+    .select_product {
+      color: #524FFD;
+    }
+  }
+
+input, textarea {
+  font-size: 18px;
+  min-width: 100px;
+  border: 1px solid #524FFD;
+  padding: 7px 10px;
+  font-family: $body-font;
+  margin: 8px 0px;
+  color: #524FFD;
+  background-color: white;
+  width: 4px;
+
+      &:focus {
+          outline: none !important;
+          border: 2px solid #524FFD;
+      }
+    }
+
 .product_form {
   width: 100;
   margin-left: 700px;
