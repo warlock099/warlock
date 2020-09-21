@@ -15,14 +15,14 @@ class ProductVariantsController < ApplicationController
   end
 
   def show
-    @product_variant = @Product.product_variants.find(params[:id])
+    @product_variant = Product_Variant.find(params[:id])
 
     # if the product is already in the cart
-   @order_item = @current_cart.order_items.find(product_variant: [@product, @product_variant])
+   @order_item = @current_cart.order_items.find(product_variant: @product_variant)
 
    if @order_item.nil?
      # if it doesn't exist in the cart
-     @order_item = @current_cart.order_items.new(product_variant: [@product, @product_variant], quantity: 1)
+     @order_item = @current_cart.order_items.new(product_variant: @product_variant, quantity: 1)
    end
   end
 

@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
 
+   attr_accessor :product_variant_id
+
 
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -12,6 +14,7 @@ class Product < ApplicationRecord
   has_many :product_variants, :dependent => :destroy
 
   has_many :order_items
+
 
   mount_uploader :cover_image, ProductImageUploader
   mount_uploader :image_1, ProductImageUploader

@@ -17,10 +17,11 @@
   </div>
 </section>
 
+<div class="product_form">
+    <%= simple_form_for [@product_variant, @order_item] do |f| %>
+    <%= f.input :quantity %>
+    <%= f.association :product_variant, include_blank: false, label: "Product select", collection: @product.product_variants.map{ |p| [p.name_of_method, p.id]  }, :required => false %>
 
-<%= simple_form_for [@product_variant, @order_item] do |f| %>
-  <%= f.input :quantity %>
-  <%= f.association :product_variant, label_method: :name_of_method %>
-
-  <%= f.button :submit, "Add to cart" %>
-<% end %>
+    <%= f.button :submit, "Add to cart" %>
+  <% end %>
+</div>

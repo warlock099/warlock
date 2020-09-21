@@ -16,13 +16,12 @@ class OrderItemsController < ApplicationController
 
 flash[:success] = "Thanks for adding to your cart"
 
-  redirect_to root_path
+redirect_to cart_path
 
 end
 
 def update
 
-@product = Product.friendly.find(params[:product_id])
 
 @product_variant = ProductVariant.find(params[:product_variant_id])
 
@@ -49,7 +48,7 @@ end
 
 
 def form_params
-params.require(:order_item).permit(:quantity, :product_variant_id)
+params.require(:order_item).permit(:quantity, :product_variant_id, :product_id)
 end
 
 
