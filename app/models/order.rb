@@ -4,8 +4,6 @@ class Order < ApplicationRecord
   has_many :order_items
 
 
-
-
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
@@ -28,7 +26,7 @@ end
    @total = 0
 
    order_items.each do |item|
-     @total = @total + item.product_variant.price * item.quantity
+     @total = @total + item.product_variant.price_in_dollars * item.quantity
    end
 
    @total

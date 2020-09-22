@@ -12,11 +12,6 @@ Rails.application.routes.draw do
     end
 
 
-
-
-
-
-
   # we want a user to only have one cart
   resource :cart
 

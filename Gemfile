@@ -36,6 +36,7 @@ end
 gem 'active_link_to'
 
 gem 'simple_form'
+gem 'country_select'
 
 # uploads
 gem 'carrierwave', '~> 2.0'
@@ -47,6 +48,8 @@ gem 'fog-aws'
 # admin
 gem 'activeadmin'
 gem 'devise'
+
+gem 'stripe'
 
 # SEO
 gem 'friendly_id', '~> 5.4.0'
