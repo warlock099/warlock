@@ -1,6 +1,40 @@
 
 <h1>Checkout</h1>
 
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_items.each do |item| %>
+
+      <tr>
+        <td>
+          <%= item.product_variant.product.title %>
+        </td>
+        <td>
+          <%= item.product_variant.item %>/<%= item.product_variant.size %>/<%= item.product_variant.color %>
+        </td>
+        <td>
+          <%= number_to_currency item.product_variant.price_in_dollars %>
+        </td>
+        <td>
+          <%= item.quantity %>
+        </td>
+
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+
 Total number of items: <%= @order.order_items.size %>
 
 <%= simple_form_for @order do |f| %>
@@ -16,3 +50,8 @@ Total number of items: <%= @order.order_items.size %>
   <%= f.button :submit, "Submit order" %>
 
   <% end %>
+
+
+  <p>
+    Total: <%= number_to_currency @order.total_price%>
+  </p>

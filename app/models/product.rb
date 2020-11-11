@@ -22,4 +22,35 @@ class Product < ApplicationRecord
   mount_uploader :image_3, ProductImageUploader
 
 
+  def total_quantity
+
+    @count = 0
+
+    @order.order_items.all.each do |item|
+      @count = @count + item.quantity
+    end
+    @count
+  end
+
+  def total_price
+    @total = 0
+
+  @order.order_items.all.each do |item|
+  @total = @total + item.product_variant.price * item.quantity
+  end
+    @total
+  end
+
+  def total_price_in_dollars
+
+  @total = 0
+
+  @order.order_items.all.each do |item|
+    @total = @total + item.product_variant.price_in_dollars * item.quantity
+  end
+
+  @total
+  end
+
+
 end

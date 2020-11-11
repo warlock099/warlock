@@ -25,7 +25,7 @@ end
   def total_price
    @total = 0
 
-   order_items.each do |item|
+   self.order_items.each do |item|
      @total = @total + item.product_variant.price_in_dollars * item.quantity
    end
 
@@ -36,7 +36,7 @@ end
  def total_price_in_dollars
    @total = 0
 
-   order_items.all.each do |item|
+   self.order_items.all.each do |item|
      @total = @total + item.product_variant.price_in_dollars * item.quantity
    end
 

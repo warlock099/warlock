@@ -1,0 +1,2 @@
+class WebooksController < ApplicationController
+end

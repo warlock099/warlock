@@ -11,12 +11,18 @@ Rails.application.routes.draw do
           resources :order_items
     end
 
+    # stripe payments
+    resources :stripe_payment_intents
+    resources :webhooks, only: [:create]
+
 
   # we want a user to only have one cart
   resource :cart
 
    # we want our users to order multiple times
   resources :orders
+
+  resources :order_confirmation
 
   root "products#index"
 
