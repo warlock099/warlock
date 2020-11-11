@@ -1,0 +1,2 @@
+class ReviewOrdersController < ApplicationController
+end

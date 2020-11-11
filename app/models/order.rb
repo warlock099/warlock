@@ -29,7 +29,7 @@ end
      @total = @total + item.product_variant.price_in_dollars * item.quantity
    end
 
-   @total
+   @total.to_i
  end
 
 
@@ -40,7 +40,7 @@ end
      @total = @total + item.product_variant.price_in_dollars * item.quantity
    end
 
-   @total
+   @total.to_i
  end
 
 end

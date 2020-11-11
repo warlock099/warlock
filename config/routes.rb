@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
 
     # stripe payments
-    resources :stripe_payment_intents
+    resources :payment_intents
     resources :webhooks, only: [:create]
 
 
@@ -22,7 +22,6 @@ Rails.application.routes.draw do
    # we want our users to order multiple times
   resources :orders
 
-  resources :order_confirmation
 
   root "products#index"
 

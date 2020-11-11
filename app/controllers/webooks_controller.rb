@@ -1,2 +1,0 @@
-class WebooksController < ApplicationController
-end

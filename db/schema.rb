@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_11_180708) do
+ActiveRecord::Schema.define(version: 2020_11_11_193911) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 2020_11_11_180708) do
     t.string "stripe_token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "stripe_payment_intent"
+    t.string "stripe_payment_id"
   end
 
   create_table "product_variants", force: :cascade do |t|
