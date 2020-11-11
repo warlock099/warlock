@@ -89,17 +89,19 @@ Total number of items: <%= @order.order_items.size %>
 <% end %>
 </div>
 
+<p>
+  Total: <%= number_to_currency @order.total_price.to_i, :id => "amount", type: "number" %>
+</p>
+
 <div id="card" class="card-order">
   <!-- card element appears here -->
 </div>
+
 
    <input type="submit" value="Confirm order and pay">
 
    </form>
 
-  <p>
-    Total: <%= number_to_currency @order.total_price, :id => "amount" %>
-  </p>
 
 
 
@@ -115,14 +117,14 @@ Total number of items: <%= @order.order_items.size %>
   var styles = {
     base: {
       iconColor: "#524FFD",
-      color: "#524FFD",
+      color: "#ffffff",
       fontFamily: "Spectral",
       fontSize: "16px",
       fontSmoothing: 'antialiased',
-      borderColor: "#524FFD",
+      borderColor: "#ffffff",
 
       "::placeholder": {
-        color: "#ccc"
+        color: "#ffffff"
       },
       ":-webkit-autofill": {
         color: "#ccc"
@@ -149,6 +151,7 @@ Total number of items: <%= @order.order_items.size %>
       },
       body: JSON.stringify({
         authenticity_token: '<%= form_authenticity_token %>',
+        amount: document.getElementById('amount')
       }),
     })
     .then((response) => response.json())
