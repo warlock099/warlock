@@ -90,7 +90,7 @@ Total number of items: <%= @order.order_items.size %>
 </div>
 
 <p>
-  Sub total: <%= number_to_currency @order.total_price.to_i, :id => "amount", type: "number" %>
+  Sub total: <%= number_to_currency @order.total_price, :id => "amount", type: "number" %>
 </p>
 <p>Shipping + Taxes: $0.00</p>
 --------------------------------
@@ -116,28 +116,28 @@ Total number of items: <%= @order.order_items.size %>
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{
-    cssSrc: "https://fonts.googleapis.com/css?family=Roboto+Slab",
+    cssSrc: "https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400)",
   }];
   // styles for the stripe inputs
   var styles = {
     base: {
-      iconColor: "#514efc",
+      iconColor: "#524FFD",
       color: "#ffffff",
-      fontFamily: "RobotoSlab",
-      fontWeight: "200",
+      fontFamily: "Roboto Slab",
       fontSize: "16px",
       fontSmoothing: 'antialiased',
+      borderColor: "#ffffff",
 
       "::placeholder": {
         color: "#ffffff"
       },
       ":-webkit-autofill": {
-        color: "#514efc"
+        color: "#ccc"
       }
     },
     invalid: {
-      iconColor: "#514efc",
-      color: "#514efc"
+      iconColor: "#FFC7EE",
+      color: "#A31621"
     }
   }
 
