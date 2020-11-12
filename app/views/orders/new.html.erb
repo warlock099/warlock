@@ -90,12 +90,12 @@ Total number of items: <%= @order.order_items.size %>
 </div>
 
 <p>
-  Sub total: <%= number_to_currency @order.total_price, :id => "amount", type: "number" %>
+  Sub total: <%= number_to_currency @order.total_price %>
 </p>
 <p>Shipping + Taxes: $0.00</p>
 --------------------------------
 
-<p>Total: <%= number_to_currency @order.total_price, :id => "amount", type: "number" %> </p>
+<p id="amount"><%= number_to_currency @order.total_price.to_i %> </p>
 
 <div id="card" class="card-order">
   <!-- card element appears here -->
@@ -107,11 +107,9 @@ Total number of items: <%= @order.order_items.size %>
    </form>
 
 
-
-
   <script charset="utf-8">
-    (function(){
 
+    (function(){
 
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
@@ -156,7 +154,7 @@ Total number of items: <%= @order.order_items.size %>
       },
       body: JSON.stringify({
         authenticity_token: '<%= form_authenticity_token %>',
-        amount: document.getElementById('amount')
+        amount: document.getElementById('amount').value
       }),
     })
     .then((response) => response.json())

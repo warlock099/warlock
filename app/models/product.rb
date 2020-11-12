@@ -8,7 +8,6 @@ class Product < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :price, presence: true
   validates :cover_image, presence: true
 
   has_many :product_variants, :dependent => :destroy

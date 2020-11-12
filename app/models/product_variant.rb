@@ -9,6 +9,7 @@ class ProductVariant < ApplicationRecord
   end
 
   validates :item, presence: true
+  validates :price, presence: true
 
   def price_in_dollars
    price / 100

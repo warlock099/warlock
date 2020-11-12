@@ -7,7 +7,7 @@ class PaymentIntentsController < ApplicationController
 
   # Create a payment intent with the expected amount,
   payment_intent = Stripe::PaymentIntent.create(
-    amount: @order.total_price * 100,
+    amount: @order.total_price.to_i * 100,
     currency: 'usd',
     description: "Order for ",
     statement_descriptor: 'Warlock order',
