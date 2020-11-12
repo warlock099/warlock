@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     @order.add_from_cart(@current_cart)
 
     if @order.save
+
       reset_session
 
       flash[:success] = "Order completed"

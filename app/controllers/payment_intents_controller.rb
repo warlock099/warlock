@@ -1,5 +1,7 @@
 class PaymentIntentsController < ApplicationController
 
+  before_action :set_order
+
   def create
 
 
@@ -27,7 +29,7 @@ class PaymentIntentsController < ApplicationController
 
   # Create a payment intent with the expected amount,
   payment_intent = Stripe::PaymentIntent.create(
-    amount: params[:order].total_price * 100,
+    amount: @order.total_price,
     currency: 'usd',
     description: "Order for ",
     statement_descriptor: 'Warlock order',
@@ -40,4 +42,14 @@ class PaymentIntentsController < ApplicationController
 
 
   end
+
+
+
+
+  private
+
+   def set_order
+       @order = Order.find_by(params[:order_id])
+   end
+
 end

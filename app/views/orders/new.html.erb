@@ -90,8 +90,12 @@ Total number of items: <%= @order.order_items.size %>
 </div>
 
 <p>
-  Total: <%= number_to_currency @order.total_price.to_i, :id => "amount", type: "number" %>
+  Sub total: <%= number_to_currency @order.total_price.to_i, :id => "amount", type: "number" %>
 </p>
+<p>Shipping + Taxes: $0.00</p>
+--------------------------------
+
+<p>Total: <%= number_to_currency @order.total_price, :id => "amount", type: "number" %> </p>
 
 <div id="card" class="card-order">
   <!-- card element appears here -->
@@ -106,33 +110,34 @@ Total number of items: <%= @order.order_items.size %>
 
 
   <script charset="utf-8">
+    (function(){
 
 
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{
-    cssSrc: "https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400)",
+    cssSrc: "https://fonts.googleapis.com/css?family=Roboto+Slab",
   }];
   // styles for the stripe inputs
   var styles = {
     base: {
-      iconColor: "#524FFD",
+      iconColor: "#514efc",
       color: "#ffffff",
-      fontFamily: "Spectral",
+      fontFamily: "RobotoSlab",
+      fontWeight: "200",
       fontSize: "16px",
       fontSmoothing: 'antialiased',
-      borderColor: "#ffffff",
 
       "::placeholder": {
         color: "#ffffff"
       },
       ":-webkit-autofill": {
-        color: "#ccc"
+        color: "#514efc"
       }
     },
     invalid: {
-      iconColor: "#FFC7EE",
-      color: "#A31621"
+      iconColor: "#514efc",
+      color: "#514efc"
     }
   }
 
@@ -178,4 +183,5 @@ Total number of items: <%= @order.order_items.size %>
       console.error('Error:', error);
     });
   });
+   })();
 </script>
