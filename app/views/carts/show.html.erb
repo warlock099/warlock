@@ -28,7 +28,7 @@
           <%= item.quantity %>
         </td>
         <td>
-          <%= link_to "Remove", product_variant_order_item_path(item.product_variant, item), method: :delete %>
+          <%= link_to "Remove", product_variant_order_item_path(item.product_variant, item), method: :delete, :class => "remove" %>
         </td>
 
       </tr>

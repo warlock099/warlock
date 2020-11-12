@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400);
+@import url(https://fonts.googleapis.com/css?family=Russo+One);
+
+
+
+$body-font: "Roboto Slab";
+$heading-font: "Russo One";
+
+.select_product {
+  padding: 16px 24px;
+  border: 2px solid #524FFD;
+  color: #524FFD;
+  margin-top: 8px;
+  font-family: $body-font;
+  font-size: 14px;
+  width: 300px;
+}
