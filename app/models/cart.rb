@@ -7,7 +7,7 @@ class Cart < ApplicationRecord
     @count = 0
 
     order_items.all.each do |item|
-      @count = @count + item.quantity
+      @count = @count + item.quantity.to_i
     end
     @count
   end
@@ -16,7 +16,7 @@ class Cart < ApplicationRecord
     @total = 0
 
   order_items.all.each do |item|
-  @total = @total + item.product_variant.price * item.quantity
+  @total = @total + item.product_variant.price * item.quantity.to_i
   end
     @total
   end
@@ -26,7 +26,7 @@ class Cart < ApplicationRecord
   @total = 0
 
   order_items.all.each do |item|
-    @total = @total + item.product_variant.price_in_dollars * item.quantity
+    @total = @total + item.product_variant.price_in_dollars * item.quantity.to_i
   end
 
   @total

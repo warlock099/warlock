@@ -14,7 +14,13 @@
   text-transform: uppercase;
 }
 
-.cart {
+.cart tr {
+  margin-top: 24px;
   margin-bottom: 8px;
-  border-bottom: 1px solid blue;
+  border: 1px solid blue;
+  padding: 12px;
+}
+
+tbody {
+  margin-top: 24px;
 }

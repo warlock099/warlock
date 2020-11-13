@@ -10,11 +10,10 @@
       <th></th>
     </tr>
   </thead>
-  <div class="cart">
   <tbody>
     <% @current_cart.order_items.each do |item| %>
 
-      <tr>
+      <tr class="cart">
         <td>
           <%= image_tag item.product_variant.product.image_1.thumb.url %>
         </td>
@@ -35,7 +34,6 @@
 
     <% end %>
   </tbody>
-    </div>
 </table>
 
 <p>
