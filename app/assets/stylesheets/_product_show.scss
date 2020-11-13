@@ -30,6 +30,7 @@ section.product-grid-show {
   width: 200px;
   text-align: center;
   margin-top: 80px;
+  font-weight: 400;
 }
 
 
@@ -44,7 +45,7 @@ section.description {
 
     p {
     margin-top: 32px;
-    font-size: 24px;
+    font-size: 20px;
       }
 }
 
@@ -58,4 +59,11 @@ div.add-to-cart-form {
 
 label.product_select {
   margin-top: 16px;
+}
+
+.back_arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20%;
+  margin-right: 4px;
 }

@@ -20,10 +20,12 @@
           <% end %>
 
   <nav>
-
+    <div class="bag_item">
     <%= link_to cart_path do %>
-         Cart (<%= @current_cart.total_quantity %> items, <%= number_to_currency @current_cart.total_price_in_dollars %>)
+      <span><%= image_tag "shopping_bag2.svg", :class => "shopping_bag" %> </span>
+      <span class="quantity"><%= @current_cart.total_quantity %> </span>
        <% end %>
+         </div>
   </nav>
 
   </header>

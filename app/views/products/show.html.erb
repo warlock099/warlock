@@ -14,7 +14,6 @@
 
      <div class="add-to-cart-form">
       <%= simple_form_for [@product_variant, @order_item] do |f| %>
-      <%= f.input :quantity, label: "Quantity:", input_html: { min: '1', step: '1' } %>
       <%= f.association :product_variant, include_blank: false, label: "Product select:", collection: @product.product_variants.map{ |p| [p.name_of_method, p.id]  }, :required => false, input_html: { class: 'select_product' }, label_html: { class: 'product_select'}  %>
 
       <%= f.button :submit, "ADD TO CART" %>
@@ -26,7 +25,7 @@
 
      <div class="back-to-front-page">
        <%= link_to products_path do %>
-      <span class="back-to-front" >Back to front page</span>
+    <span class="back-to-front" > <%= image_tag "back_arrow.svg", :class => "back_arrow" %>  Back to front page</span>
         <% end %>
       </div>
   </div>
