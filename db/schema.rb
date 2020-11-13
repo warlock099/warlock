@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_11_193911) do
+ActiveRecord::Schema.define(version: 2020_11_13_124352) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -138,7 +138,6 @@ ActiveRecord::Schema.define(version: 2020_11_11_193911) do
     t.string "title"
     t.string "cover_image"
     t.text "description"
-    t.integer "price"
     t.string "image_1"
     t.string "image_2"
     t.string "image_3"
