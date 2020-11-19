@@ -67,7 +67,7 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
 address:              'smtp.sendgrid.net',
 port:                 587,
-domain:               'info@timesink.tv',
+domain:               'lol@warlockenterprises.com',
 user_name:             Rails.application.credentials[Rails.env.to_sym][:sendgrid_username],
 password:              Rails.application.credentials[Rails.env.to_sym][:sendgrid_password],
 authentication:       'plain',
