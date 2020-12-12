@@ -28,13 +28,22 @@
        <% end %>
          </section>
 
-         <span>
-           <a href="#" class="menu-toggle">
-            <%= image_tag "menu-icon.svg", class: "hamburger" %>
-          </a>
-        </span>
-
-</nav>
+         <span id="nav-container">
+        <div class="bg"></div>
+        <div class="button" tabindex="0">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </div>
+        <div id="nav-content" tabindex="0">
+          <ul>
+            <li><a href="#0">About</a></li>
+            <li><a href="#0">Shipping</a></li>
+            <li><a href="#0">Contact</a></li>
+            <li class="small"><a href="#0">Facebook</a><a href="#0">Instagram</a></li>
+          </ul>
+        </div>
+      </span>
 
 
   </header>
@@ -45,34 +54,11 @@
    </div>
  <% end %>
 
- <div class="menu">
-  <nav>
-    <a>Shop</a>
-    <a>Winter 2017</a>
-    <a>Process</a>
-    <a>About us</a>
-  </nav>
-</div>
-
 
 
     <main>
     <%= yield %>
     </main>
-
-<script type="text/javascript">
-  // 1. When we click the 'hamburger icon' we will run a function
-// 2. Inside the function, we are going to add/remove the class of open
-// 3. We are going to make sure our link doesn't jump on the page to the top
-
-$('.menu-toggle').on('click', function() {
-
-  $('.menu').toggleClass('open')
-
-  return false
-
-})
-</script>
 
   </body>
 </html>

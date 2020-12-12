@@ -98,12 +98,15 @@ header {
   align-items: center;
 
   nav {
-
+display: flex;
 
     a {
       // margin-right: 32px;
       vertical-align: center;
+    }
 
+    section.bag_item {
+      margin-right: 48px;
     }
   }
 
@@ -187,49 +190,156 @@ section.bag_item {
 
 // hamburger nav
 
-.menu{
-  background-color: rgba(#09c933, 0.95);
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+* {
+  outline: none;
+}
+
+
+#nav-container {
   position: fixed;
-  width: 400px;
-  top: 0;
-  right: 0;
-  height: 100%;
-/* this will hide our menu off the screen  */
-  transform: translateX(100%);
-  transition: transform 0.5s ease;
-  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
 }
-
-.open{
-  transform: translateX(0);
-}
-
-.menu-toggle{
-  z-index: 3;
-}
-
-.hamburger {
-  width: 10%;
-}
-
-div.menu nav{
+#nav-container .bg {
   position: absolute;
-  left: 65px;
-/* here we position the top edge of the box 50% from the top of the container   */
-  top: 50%;
-/* transform:translateY and expressing as a % is a more
-  robust way to position elements in relation to their height property   */
-  transform: translateY(-50%);
-/*  using negative margins is one way to offset elements to make them appear in the middle
-  here we used the height of the element (192) and dived in half (2) = 96 */
-/*   margin-top: -96px; */
+  top: 70px;
+  right: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  background: #000;
+}
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+#nav-container * {
+  visibility: visible;
 }
 
-div.menu nav a{
-  font-size: 32px;
-  font-weight: 700;
-/* we need display:block here bc <a> tags are inline elements
-  and therefore the default display is horizontally across the page  */
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  height: 70px;
+  width: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 6rem;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.icon-bar {
   display: block;
-  margin-bottom: 10px;
+  width: 100%;
+  height: 3px;
+  background: rgba(#04be49, 0.61);
+  transition: .3s;
+}
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+#nav-container:focus-within .button {
+  pointer-events: none;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(1) {
+  transform: translate3d(0,8px,0) rotate(45deg);
+}
+#nav-container:focus-within .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+  transform: translate3d(0,-8px,0) rotate(-45deg);
+}
+
+#nav-content {
+  margin-top: 70px;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1;
+  background: #07ba0e;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transform: translateX(150%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+}
+
+#nav-content ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-content li a {
+  padding: 10px 5px;
+  display: block;
+  text-transform: uppercase;
+  transition: color .1s;
+}
+
+#nav-content li a:hover {
+  color: #ffffff;
+}
+
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+}
+
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  outline: 0;
+}
+
+a {
+  color: currentColor;
+  transition: .2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
 }
