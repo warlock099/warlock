@@ -19,6 +19,8 @@ class OrdersController < ApplicationController
 
     if @order.save
 
+      
+
       reset_session
 
       flash[:success] = "Order completed"

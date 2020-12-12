@@ -1,6 +1,5 @@
 class PaymentIntentsController < ApplicationController
 
-  before_action :set_order
 
   def create
 
@@ -22,9 +21,5 @@ class PaymentIntentsController < ApplicationController
   end
 
 
-
-   def set_order
-       @order = Order.find_by(params[:order_id])
-   end
 
 end

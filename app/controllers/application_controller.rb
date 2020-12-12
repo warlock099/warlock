@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   # gives current_cart access to our 'views' .. to our html
   helper_method :current_cart
 
+  def money
+    "$"
+  end
+
   def current_cart
 
 

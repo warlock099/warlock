@@ -11,14 +11,19 @@ ActiveAdmin.register Product do
   index do
     selectable_column
     index_column
-    column "Cover Image" do |product|
+    column "Design" do |product|
       image_tag product.cover_image.thumb.url
     end
-    column :id
+    column "Product ID #" do |product|
+      product.id
+    end
     column :title
     column :description
     column :is_sold_out
-    column :product_variants
+    column "Product variants" do |product|
+      product.product_variants.each do |product_variant|
+      end
+  end
     actions
   end
 

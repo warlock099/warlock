@@ -8,20 +8,22 @@ $heading-font: "Russo One";
 
 .select_product {
   padding: 16px 24px;
-  border: 2px solid #524FFD;
-  color: #524FFD;
+  border: 2px solid rgb(20, 190, 52);
+  color: rgb(20, 190, 52);
   margin-top: 8px;
   font-family: $body-font;
   font-size: 14px;
   width: 360px;
+  font-weight: 700;
 }
 
 .select-quantity {
   padding: 16px 24px;
-  border: 2px solid #524FFD;
-  color: #524FFD;
+  border: 2px solid rgb(20, 190, 52);
+  color: rgb(20, 190, 52);
   margin-top: 8px;
   font-family: $body-font;
   font-size: 14px;
+  font-weight: 700;
    width: 64px;
 }
