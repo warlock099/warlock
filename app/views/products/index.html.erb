@@ -1,21 +1,14 @@
+<div class="products-grid">
 <% @products.each do |product| %>
-
-<ul class="products-grid">
-  <li>
-    <div class="product">
-    <div class="product-cover">
+  <section class="product">
+    <section class="product-cover">
     <%= link_to product_path(product) do %>
-    <%= image_tag product.cover_image.store.url %>
+    <%= image_tag product.cover_image.show.url, class: "product-img" %>
     <% end %>
-      </div>
-      <div class="Product-text">
-        <%= link_to product_path(product) do %>
+      </section>
+      <section class="Product-text">
         <h4><%= product.title %></h4>
-        <% end %>
-      </div>
-      </div>
-</li>
-
-</ul>
-
+      </section>
+  </section>
 <% end %>
+</div>

@@ -10,7 +10,7 @@ class OrderConfirmationMailer < ApplicationMailer
   def newOrder(order)
     @order = order
 
-    mail to: "azback5@gmail.com", subject: "New order!"
+    mail to: "lol@warlockenterprises.com", subject: "New order!"
   end
 
 end

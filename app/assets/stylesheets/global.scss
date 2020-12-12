@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400);
 @import url(https://fonts.googleapis.com/css?family=Russo+One);
 
-
+// @import "resets";
 @import "checkout";
 @import "forms";
 @import "cart";
@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   font-family: $body-font;
   font-weight: 300;
@@ -101,8 +101,8 @@ header {
 
 
     a {
-      margin-right: 32px;
-        vertical-align: center;
+      // margin-right: 32px;
+      vertical-align: center;
 
     }
   }
@@ -124,48 +124,29 @@ a {
   color: black;
 }
 
-section.flexbox {
-
-    width: 600px;
-
-    margin: 0px auto;
-    display: flex;
 
 
-  .flex {
+div.products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  // grid-column-gap: 108px;
+align-items: center;
+justify-items: center;
+margin-left: auto;
+margin-right: auto;
+grid-gap: 80px;
 
-    margin-left: 48px;
-    width: 50%;
-    vertical-align: center;
-    text-align: center;
-
-    h2 {
-      margin-bottom: 56px;
-    }
-  }
-}
-
-ul.products-grid {
-  list-style: none;
-
-  .product {
-    text-align: center;
-  }
-
-
-  li {
-    width: 25%;
-    height: 120px;
-    float: left;
-    margin-bottom: 180px;
-  }
 }
 
 
 // show page
 
 h4 {
-  margin-left: 32px;
+  // margin-left: 32px;
+  text-align: center;
+  align-items: center;
+  margin-top: 48px;
 }
 
 .shopping_bag {
@@ -179,4 +160,76 @@ span.quantity {
   font-size: 24px;
   vertical-align: middle;
   margin-left: 4px;
+}
+
+.product-img {
+  box-shadow:
+0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+0 12.5px 10px rgba(0, 0, 0, 0.06),
+0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+0 100px 80px rgba(0, 0, 0, 0.12)
+;
+
+
+background: white;
+border-radius: 5px;
+}
+
+
+section.bag_item {
+  width: 400px;
+}
+
+
+
+
+// hamburger nav
+
+.menu{
+  background-color: rgba(#09c933, 0.95);
+  position: fixed;
+  width: 400px;
+  top: 0;
+  right: 0;
+  height: 100%;
+/* this will hide our menu off the screen  */
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+.open{
+  transform: translateX(0);
+}
+
+.menu-toggle{
+  z-index: 3;
+}
+
+.hamburger {
+  width: 10%;
+}
+
+div.menu nav{
+  position: absolute;
+  left: 65px;
+/* here we position the top edge of the box 50% from the top of the container   */
+  top: 50%;
+/* transform:translateY and expressing as a % is a more
+  robust way to position elements in relation to their height property   */
+  transform: translateY(-50%);
+/*  using negative margins is one way to offset elements to make them appear in the middle
+  here we used the height of the element (192) and dived in half (2) = 96 */
+/*   margin-top: -96px; */
+}
+
+div.menu nav a{
+  font-size: 32px;
+  font-weight: 700;
+/* we need display:block here bc <a> tags are inline elements
+  and therefore the default display is horizontally across the page  */
+  display: block;
+  margin-bottom: 10px;
 }

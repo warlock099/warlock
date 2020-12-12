@@ -22,8 +22,6 @@ class OrdersController < ApplicationController
       reset_session
 
       flash[:success] = "Order completed"
-      OrderConfirmationMailer.Confirmation(@order).deliver_now
-      OrderConfirmationMailer.newOrder(@order).deliver_now
 
 
       redirect_to order_path(@order)

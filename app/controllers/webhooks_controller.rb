@@ -2,6 +2,7 @@ class WebhooksController < ApplicationController
 
 skip_before_action :verify_authenticity_token
 
+
 def create
 payload = request.body.read
 sig_header = request.env['HTTP_STRIPE_SIGNATURE']
@@ -35,7 +36,7 @@ when 'payment_intent.succeeded'
 
   OrderConfirmationMailer.Confirmation(@order).deliver_now
   OrderConfirmationMailer.newOrder(@order).deliver_now
-
+  
 else
   puts "Unhandled event type: #{event.type}"
 end

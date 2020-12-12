@@ -8,6 +8,7 @@
   <%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <%= favicon_link_tag asset_path('WFav.png') %>
   </head>
 
@@ -16,17 +17,25 @@
   <header>
 
           <%= link_to root_path do %>
-          <%= image_tag "Wlogo.svg" %>
+          <%= image_tag("Wlogo.svg", alt: "Warlock-Logo") %>
           <% end %>
 
   <nav>
-    <div class="bag_item">
+    <section class="bag_item">
     <%= link_to cart_path do %>
       <span><%= image_tag "shopping_bag2.svg", :class => "shopping_bag" %> </span>
       <span class="quantity"><%= @current_cart.total_quantity %> </span>
        <% end %>
-         </div>
-  </nav>
+         </section>
+
+         <span>
+           <a href="#" class="menu-toggle">
+            <%= image_tag "menu-icon.svg", class: "hamburger" %>
+          </a>
+        </span>
+
+</nav>
+
 
   </header>
 
@@ -36,7 +45,34 @@
    </div>
  <% end %>
 
+ <div class="menu">
+  <nav>
+    <a>Shop</a>
+    <a>Winter 2017</a>
+    <a>Process</a>
+    <a>About us</a>
+  </nav>
+</div>
 
+
+
+    <main>
     <%= yield %>
+    </main>
+
+<script type="text/javascript">
+  // 1. When we click the 'hamburger icon' we will run a function
+// 2. Inside the function, we are going to add/remove the class of open
+// 3. We are going to make sure our link doesn't jump on the page to the top
+
+$('.menu-toggle').on('click', function() {
+
+  $('.menu').toggleClass('open')
+
+  return false
+
+})
+</script>
+
   </body>
 </html>

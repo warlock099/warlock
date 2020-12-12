@@ -42,6 +42,8 @@ gem 'country_select'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
+gem 'greensock-rails'
+
 # storage
 gem 'fog-aws'
 

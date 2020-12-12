@@ -23,9 +23,6 @@ class PaymentIntentsController < ApplicationController
 
 
 
-
-  private
-
    def set_order
        @order = Order.find_by(params[:order_id])
    end
