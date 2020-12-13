@@ -2,7 +2,10 @@
   padding: 24px 16px;
   border-style: none;
   border: 2px solid #524FFD;
-  box-shadow: 0 2px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 9px rgba(50, 50, 93, 0.06), inset 0 2px 5px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   width: 360px;
+  background-color: #524FFD;
+  color: white;
+  margin-bottom: 0;
 }

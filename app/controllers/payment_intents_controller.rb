@@ -20,6 +20,8 @@ class PaymentIntentsController < ApplicationController
 
   end
 
-
+  def f_params
+    params.permit(:first_name, :last_name, :email, :stripe_payment_id, :authenticity_token)
+  end
 
 end

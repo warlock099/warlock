@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    render :layout => "thankyou"
   end
 
   def new
@@ -19,9 +21,12 @@ class OrdersController < ApplicationController
 
     if @order.save
 
-      
+
 
       reset_session
+
+      OrderConfirmationMailer.Confirmation(@order).deliver_now
+      OrderConfirmationMailer.newOrder(@order).deliver_now
 
       flash[:success] = "Order completed"
 

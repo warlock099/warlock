@@ -59,12 +59,12 @@
 </div>
 
 <p>
-  Sub total: <%= number_to_currency @order.total_price %>
+  Sub total: <%= number_to_currency @order.total_price, id: "amount" %>
 </p>
 <p>Shipping + Taxes: $0.00</p>
 --------------------------------
 
-<p id="amount"><%= number_to_currency @order.total_price.to_i %> </p>
+<p><%= number_to_currency @order.total_price.to_i %> </p>
 
 <div id="card" class="card-order">
   <!-- card element appears here -->
@@ -84,26 +84,28 @@
     // load the fonts in
   var fonts = [{
     cssSrc: "https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400)",
+    cssSrc:('https://fonts.googleapis.com/css2?family=Padauk:wght@700&display=swap'),
+    cssSrc: ('https://fonts.googleapis.com/css2?family=Days+One&display=swap'),
   }];
   // styles for the stripe inputs
   var styles = {
     base: {
-      iconColor: "#524FFD",
-      color: "#524FFD",
-      fontFamily: "Roboto Slab",
+      iconColor: "white",
+      color: "white",
+      fontFamily: "Padauk",
       fontSize: "16px",
       fontSmoothing: 'antialiased',
 
       "::placeholder": {
-        color: "#524FFD"
+        color: "white"
       },
       ":-webkit-autofill": {
         color: "#ccc"
       }
     },
     invalid: {
-      iconColor: "#524FFD",
-      color: "#524FFD"
+      iconColor: "white",
+      color: "red"
     }
   }
 

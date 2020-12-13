@@ -1,0 +1,45 @@
+
+$body-font: "Padauk";
+$heading-font: "Days One";
+$body-new: "Staatliches";
+
+
+div.order-show {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 600px;
+
+  button {
+    font-family: $body-font;
+    color: black;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+    padding: 16px 24px;
+  }
+}
+
+section.order-completed {
+
+   color: green;
+   text-align: center;
+   margin-top: 10rem;
+
+  h1 {
+   font-size: 80px;
+    margin-bottom: 64px;
+    font-weight: 400;
+    font-family: $heading-font;
+  }
+
+  p {
+    margin-top: 16px;
+    width: 560px;
+    font-size: 21px;
+    font-family: $body-font;
+  }
+
+}

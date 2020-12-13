@@ -1,5 +1,13 @@
-Thank you for your order!
 
-Sincerely,
+<p><%= @order.first_name %>,</p>
 
-Warlock
+<p>Thank you for your order!</p>
+
+<p>Order #<%= @order.id %></p>
+<p>Total price: $<%= @order.total_price_in_dollars %></p>
+
+<p>We look forward to seeing you again soon!</p>
+
+<p>Sincerely,</p>
+
+<p>Warlock</p>
