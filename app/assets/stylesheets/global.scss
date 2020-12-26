@@ -15,14 +15,33 @@
 @import "order";
 
 
-$body-font: "Padauk";
+$body-font: "Play";
 $heading-font: "Days One";
 $body-new: "Staatliches";
-
+$orange1: #F46C34;
+$orange2: #F68151;
+$orange3: #F8A17C;
+$red1: #E64256;
+$red2: #EC6F7E;
+$red3: #F29CA6;
+$green1: #00A84F;
+$green2: #00E56C;
+$green3: #1AFF85;
+$blue1: #0052A3;
+$blue2: #006BD6;
+$blue3: #0A85FF;
+$black1: #333333;
+$black2: #666666;
+$black3: #999999;
+$silver1: #989898;
+$silver2: #B2B2B2;
+$silver3: #CCCCCC;
+$background-silver: #F2F2F2;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font;
   font-weight : bold;
+  text-transform: uppercase;
 }
 
 
@@ -32,13 +51,13 @@ body {
   height: 100vh;
   font-family: $body-font;
   font-weight: 300;
-  background-color: white;
+  background-color: $background-silver;
 }
 
 input[type=submit] {
-  background: rgb(255, 139, 19);
+  background: $orange1;
   color: white;
-  border-color: rgb(255, 139, 19);
+  border-color: $orange1;
   // margin-top: 16px;
   margin-left: 0px;
   border-radius: 2px;
@@ -46,12 +65,12 @@ input[type=submit] {
   width: 360px;
   font-size: 14px;
   letter-spacing: 1px;
-  box-shadow:  inset 12px 4px 0 rgb(255, 139, 19);
+  box-shadow:  inset 12px 4px 0 $orange1;
 }
 
 select.select_product_class {
-  border-color: rgb(255, 139, 19);
-  color: rgb(255, 139, 19);
+  border-color: $green2;
+  color: $green2;
 }
 
 div, form {
@@ -63,10 +82,10 @@ div, form {
     font-weight: 400;
     font-size: 16px;
     display: block;
-    color: rgb(42, 181, 0);
+    color: $green1;
     margin-bottom: 4px;
     .select_product {
-      color: rgb(42, 181, 0);
+      color: $green1;
     }
   }
 
