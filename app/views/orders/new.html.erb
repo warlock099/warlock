@@ -107,18 +107,18 @@
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{
-    cssSrc:('https://fonts.googleapis.com/css2?family=Play:400'),
-    cssSrc:('https://fonts.googleapis.com/css?family=Montserrat:300')
+    cssSrc:('https://fonts.googleapis.com/css2?family=Play&display=swap'),
+    cssSrc:('https://fonts.googleapis.com/css?family=Montserrat:300'),
+    cssSrc: ('https://fonts.googleapis.com/css2?family=Aldrich&display=swap')
   }];
   // styles for the stripe inputs
   var styles = {
     base: {
       iconColor: "white",
       color: "white",
-      fontFamily: "Play, sans-serif",
-      fontSize: "16px",
+      fontFamily: "Aldrich",
+      fontSize: "14px",
       fontSmoothing: 'antialiased',
-      fontWeight: 400,
 
       "::placeholder": {
         color: "white"
