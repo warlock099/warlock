@@ -25,7 +25,7 @@ $background-silver: #F2F2F2;
 
 .remove {
   display: inline-block;
-  padding: 12px 16px;
+  padding: 8px 8px;
   border: 2px solid $red2;
   color: $red2;
 }
@@ -43,7 +43,7 @@ $background-silver: #F2F2F2;
 tr.cart {
   margin-top: 24px;
   margin-bottom: 8px;
-  border-bottom: 2px solid $green1;
+  border-bottom: 1px solid $green2;
   padding: 24px;
 }
 
@@ -94,3 +94,12 @@ div.checkout-continue {
     letter-spacing: 1px;
     text-transform: uppercase;
   }
+
+h2.empty {
+  font-family: "Play";
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  text-transform: none;
+  transform: translateY(6rem);
+}
