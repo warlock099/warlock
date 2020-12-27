@@ -31,6 +31,7 @@ $background-silver: #F2F2F2;
 }
 
 .checkout-button {
+  margin: 32px 0;
   display: inline-block;
   padding: 16px 24px;
   background-color: $orange1;
@@ -42,7 +43,7 @@ $background-silver: #F2F2F2;
 tr.cart {
   margin-top: 24px;
   margin-bottom: 8px;
-  border-bottom: 2px solid $blue3;
+  border-bottom: 2px solid $green1;
   padding: 24px;
 }
 
@@ -55,10 +56,33 @@ table {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
+    text-align: center;
+
+    // th {
+    //   padding-left: 4rem;
+    // }
+
+    th.product-head {
+      text-align: center;
+    }
+
+    td {
+      padding: 12px 0;
+    }
+
+    // td {
+    //     padding: 12px 0 12px 4rem;
+    // }
+
+    // img {
+    //   display: block;
+    //   text-align: center;
+    // }
      }
 
 div.checkout-continue {
     margin-left: 900px;
+    margin-top: 48px;
      }
 
   .back-to-shop {

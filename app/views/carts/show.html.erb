@@ -4,9 +4,11 @@
 <table>
   <thead>
     <tr>
+      <th class="product-head">Product</th>
       <th>Item</th>
       <th>Price</th>
       <th>Qty</th>
+      <th>Total</th>
       <th></th>
     </tr>
   </thead>
@@ -25,6 +27,9 @@
         </td>
         <td>
           <%= item.quantity %>
+        </td>
+        <td>
+          $<%= item.quantity * item.product_variant.price_in_dollars %>
         </td>
         <td>
           <%= link_to "Remove", product_variant_order_item_path(item.product_variant, item), method: :delete, :class => "remove" %>
