@@ -87,13 +87,14 @@
    </section>
 
  <section class="order-total">
+   <h2>Order Total</h2>
      <p>
        Sub total: <%= number_to_currency @order.total_price, id: "amount" %>
      </p>
      <p>Shipping + Taxes: $0.00</p>
-     --------------------------------
+    <hr>
 
-     <p><%= number_to_currency @order.total_price.to_i %> </p>
+     <span>Total:</span><span><%= number_to_currency @order.total_price.to_i %> </span>
    </section>
 
 </div>
@@ -106,17 +107,18 @@
   var stripe = Stripe('<%= Rails.application.credentials[Rails.env.to_sym][:stripe_public_key] %>');
     // load the fonts in
   var fonts = [{
-    cssSrc:('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap'),
-    cssSrc:('https://fonts.googleapis.com/css2?family=Padauk:wght@700&display=swap')
+    cssSrc:('https://fonts.googleapis.com/css2?family=Play:400'),
+    cssSrc:('https://fonts.googleapis.com/css?family=Montserrat:300')
   }];
   // styles for the stripe inputs
   var styles = {
     base: {
       iconColor: "white",
       color: "white",
-      fontFamily: "Padauk",
+      fontFamily: "Play, sans-serif",
       fontSize: "16px",
       fontSmoothing: 'antialiased',
+      fontWeight: 400,
 
       "::placeholder": {
         color: "white"
