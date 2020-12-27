@@ -10,20 +10,27 @@
 
       <h1>Checkout</h1>
 
+      <div class="shipping">
+        <h2>Shipping</h2>
+      </div>
+
 
       <form action="/orders" method="post" id="new_order">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="order[stripe_payment_id]" id="payment">
 
-        <div class="field">
-          <label for="FirstName">First name</label>
-          <input type="text" name="order[first_name]" id="FirstName">
-        </div>
+        <section class="name-flex">
+          <div class="field">
+            <label for="FirstName">First name</label>
+            <input type="text" name="order[first_name]" id="FirstName">
+          </div>
 
-        <div class="field">
-          <label for="LastName">Last name</label>
-          <input type="text" name="order[last_name]" id="LastName">
-        </div>
+          <div class="field-last-name">
+            <label for="LastName">Last name</label>
+            <input type="text" name="order[last_name]" id="LastName">
+          </div>
+
+        </section>
 
 
         <div class="field">
@@ -31,9 +38,10 @@
           <input type="text" name="order[email]" id="Email">
         </div>
 
+
         <div class="field">
           <label for="Address1">Address</label>
-          <input type="text" name="order[address_1]" id="Address1">
+          <input type="text" name="order[address_1]" id="Address1" placeholder="1234 Main St.">
         </div>
 
         <div class="field">
@@ -41,18 +49,21 @@
           <input type="text" name="order[address_2]" id="Address2">
         </div>
 
-        <div class="field">
-          <label for="City">City</label>
-          <input type="text" name="order[city]" id="City">
-        </div>
+        <section class="city-postal-flex">
+          <div class="field">
+            <label for="City">City</label>
+            <input type="text" name="order[city]" id="City">
+          </div>
+
+          <div class="field-postal">
+            <label for="PostalCode">Postal/Zip code</label>
+            <input type="text" name="order[postal_code]" id="PostalCode">
+          </div>
+
+        </section>
 
         <div class="field">
-          <label for="PostalCode">Postal code</label>
-          <input type="text" name="order[postal_code]" id="PostalCode">
-        </div>
-
-        <div class="field">
-          <label for="PostalCode">Country</label>
+          <label for="Country">Country</label>
           <input type="text" name="order[country]" id="Country">
         </div>
 
