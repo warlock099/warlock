@@ -8,6 +8,7 @@
   <%= stylesheet_link_tag 'global', media: 'all', 'data-turbolinks-track': 'reload' %>
  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <%= favicon_link_tag asset_path('WFav.png') %>
   </head>
@@ -20,15 +21,29 @@
           <%= image_tag("Wlogo.svg", alt: "Warlock-Logo") %>
           <% end %>
 
-  <nav>
-        <section class="bag_item">
-          <%= link_to cart_path do %>
-            <span><%= image_tag "shopping_bag2.svg", :class => "shopping_bag" %> </span>
-            <span class="quantity"><%= @current_cart.total_quantity %> </span>
-             <% end %>
-          </section>
 
-      <section id="nav-container">
+
+  <nav>
+
+
+    <span>
+      <a href="#Apparel" id="red">Apparel</a>
+      <a href="#PosterProducts" id="blue">Poster products</a>
+      <a href="#Other" id="orange">Other</a>
+      <a href="#contact" id="green">Contact</a>
+
+        <%= link_to cart_path do %>
+
+        <ion-icon name="cart-outline"></ion-icon>
+          <span class="quantity"><%= @current_cart.total_quantity %> </span>
+           <% end %>
+
+
+    </span>
+
+
+
+      <!-- <section id="nav-container">
           <div class="bg"></div>
           <div class="button" tabindex="0">
             <span class="icon-bar"></span>
@@ -42,10 +57,10 @@
             <li><a href="#0"><h3>Contact</h3></a></li>
           </ul>
         </div>
-      </section>
+      </section> -->
 
-
-  </header>
+    </nav>
+</header>
 
   <% if flash[:success].present? %>
    <div class="flash-success">
