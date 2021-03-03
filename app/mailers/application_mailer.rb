@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'lol@warlockenterprises.com'
+  default from: 'Warlock Enterprises <lol@warlockenterprises.com>'
   layout 'mailer'
 end

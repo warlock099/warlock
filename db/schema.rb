@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 2020_11_13_124352) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "cart_id"
+    t.integer "product_id"
     t.integer "product_variant_id"
     t.integer "order_id"
     t.integer "quantity"
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_11_13_124352) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cart_id"], name: "index_order_items_on_cart_id"
     t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
     t.index ["product_variant_id"], name: "index_order_items_on_product_variant_id"
   end
 
@@ -152,5 +154,6 @@ ActiveRecord::Schema.define(version: 2020_11_13_124352) do
   add_foreign_key "order_items", "carts"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "product_variants"
+  add_foreign_key "order_items", "products"
   add_foreign_key "product_variants", "products"
 end
