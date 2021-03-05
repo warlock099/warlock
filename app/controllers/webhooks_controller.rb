@@ -3,7 +3,6 @@ class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
 
-
 def create
 
     payload = request.body.read
@@ -33,7 +32,6 @@ def create
 
       puts "PaymentIntent succeeded"
       @order = Order.find_by!(stripe_payment_id: payment_intent.id)
-      @order.update(status: 'paid')
       puts "Order found: #{@order.last_name}"
 
       OrderConfirmationMailer.Confirmation(@order).deliver_now
