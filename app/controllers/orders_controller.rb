@@ -25,6 +25,8 @@ class OrdersController < ApplicationController
 
       reset_session
 
+      OrderConfirmationMailer.Confirmation(@order).deliver_now
+      OrderConfirmationMailer.newOrder(@order).deliver_now
 
       flash[:success] = "Order completed"
 
