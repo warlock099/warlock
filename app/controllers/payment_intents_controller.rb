@@ -9,7 +9,7 @@ class PaymentIntentsController < ApplicationController
     amount: @current_cart.total_price.to_i,
     currency: 'usd',
     description: "Order for ",
-    statement_descriptor: 'Warlock order',
+    statement_descriptor: 'Warlock order'
   )
   # return the client secret
   render json: {
