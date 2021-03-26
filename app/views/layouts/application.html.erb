@@ -14,6 +14,8 @@
   </head>
 
     <body>
+      <div id="page-container">
+        <div id="content-wrap">
 
   <header>
 
@@ -28,9 +30,9 @@
 
     <span>
       <a href="#Apparel" id="red">Apparel</a>
-      <a href="#PosterProducts" id="blue">Poster prints</a>
-      <a href="#Other" id="orange">Other</a>
-      <a href="#contact" id="green">Contact</a>
+      <a href="#PosterProducts" id="blue">Prints</a>
+      <a href="#NFTs" id="orange">NFTs</a>
+      <a href="#contact" id="green">What is Warlock?</a>
 
         <%= link_to cart_path do %>
 
@@ -41,8 +43,7 @@
 
     </span>
 
-
-
+<%# hamburger menu %>
       <!-- <section id="nav-container">
           <div class="bg"></div>
           <div class="button" tabindex="0">
@@ -74,7 +75,11 @@
     <%= yield %>
     </main>
 
-    <footer>© Warlock Enterprises 2020, All Rights Reserved</footer>
-
+    <footer class="footer-flex" id="footer">
+      <span class="first">© Warlock Enterprises 2020, All Rights Reserved</span>
+      <span>hello@warlockenterprises.com</span>
+    </footer>
+  </div>
+</div>
   </body>
 </html>
