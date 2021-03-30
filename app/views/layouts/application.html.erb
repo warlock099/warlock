@@ -29,10 +29,10 @@
 
 
     <span>
-      <a href="#Apparel" id="red">Apparel</a>
-      <a href="#PosterProducts" id="blue">Prints</a>
-      <a href="#NFTs" id="orange">NFTs</a>
-      <a href="#contact" id="green">What is Warlock?</a>
+      <%= link_to "Apparel", products_path, id: "red" %>
+      <%= link_to "Prints", prints_path, id: "blue" %>
+      <a href="#" id="orange">NFTs</a>
+      <%= link_to "What is Warlock?", about_path, id: "green" %>
 
         <%= link_to cart_path do %>
 

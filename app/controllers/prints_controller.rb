@@ -1,16 +1,7 @@
-class ProductsController < ApplicationController
+class PrintsController < ApplicationController
 
   def index
     @products = Product.all
-  end
-
-  def new
-    @product = Product.new
-  end
-
-  def create
-    @product = Product.new(product_params)
-    @product.save
   end
 
   def show
@@ -25,25 +16,13 @@ class ProductsController < ApplicationController
      # if it doesn't exist in the cart
      @order_item = @current_cart.order_items.new(product_variant: @product_variant, quantity: 1)
    end
-
   end
 
-  def edit
-  end
-
-  def update
-    render "edit"
-  end
-
-  def destroy
-  end
 
 
 
   def product_params
-    Params.require(:product).permit(:title, :description, :is_sold_out, :is_print, :cover_image, :image_1, :image_2, :image_3 )
+    Params.require(:product).permit(:title, :description, :is_print, :cover_image, :image_1, :image_2, :image_3 )
   end
-
-
 
 end

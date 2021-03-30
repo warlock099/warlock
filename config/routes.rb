@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # we want to see multiple products
 
-      resources :products
+      resources :products, path: "apparel"
+      resources :prints
 
         resources :product_variants do
           resources :order_items
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
    # we want our users to order multiple times
   resources :orders
 
-
+  get "about", to: "pages#about"
   root "products#index"
 
 end

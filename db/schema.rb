@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_124352) do
+ActiveRecord::Schema.define(version: 2021_03_30_134845) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(version: 2020_11_13_124352) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.boolean "is_print"
     t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 

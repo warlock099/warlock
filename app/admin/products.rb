@@ -5,7 +5,7 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :cover_image, :description, :image_1, :image_2, :image_3, :is_sold_out, :slug
+  permit_params :title, :cover_image, :description, :image_1, :image_2, :image_3, :is_print, :is_sold_out, :slug
 
 
   index do
@@ -19,6 +19,7 @@ ActiveAdmin.register Product do
     end
     column :title
     column :description
+    column :is_print
     column :is_sold_out
     column "Product variants" do |product|
       product.product_variants.each do |product_variant|

@@ -1,6 +1,5 @@
 <div class="products-grid">
 <% @products.each do |product| %>
-<% if product.is_print != true %>
   <section class="product">
     <section class="product-cover">
     <%= link_to product_path(product) do %>
@@ -11,6 +10,5 @@
         <h3><%= product.title %></h3>
       </section>
   </section>
-  <% end %>
 <% end %>
 </div>

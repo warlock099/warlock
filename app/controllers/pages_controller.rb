@@ -3,7 +3,10 @@ class PagesController < ApplicationController
   def shipping
   end
 
-  def about 
+  def prints
+  end
+
+  def about
   end
 
   def contact
