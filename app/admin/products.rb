@@ -28,4 +28,5 @@ ActiveAdmin.register Product do
     actions
   end
 
+
 end

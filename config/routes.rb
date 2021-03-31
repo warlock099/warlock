@@ -12,6 +12,8 @@ Rails.application.routes.draw do
           resources :order_items
     end
 
+    resources :nfts , path: "NFT"
+
     # stripe payments
     resources :payment_intents
     resources :webhooks, only: [:create]

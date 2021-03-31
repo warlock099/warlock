@@ -12,6 +12,7 @@
 @import "forms";
 @import "cart";
 @import "product_show";
+@import "nft";
 @import "order";
 @import "about";
 @import "footer";
@@ -60,7 +61,7 @@ $background-silver: #F2F2F2;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font;
-  font-weight : bold;
+  font-weight : normal;
   text-transform: uppercase;
   // color: $black1;
 }
