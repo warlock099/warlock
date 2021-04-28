@@ -38,7 +38,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   end
 
   version :nft do
-    process resize_to_fill: [ 400, 400]
+    process resize_to_fit: [ 400, 400]
   end
 
   version :show do
