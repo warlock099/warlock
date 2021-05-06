@@ -5,5 +5,4 @@ CarrierWave.configure do |config|
     aws_secret_access_key: Rails.application.credentials[Rails.env.to_sym][:aws_password]
   }
   config.fog_directory  = Rails.application.credentials[Rails.env.to_sym][:aws_bucket]
-  config.fog_public     = false
 end
