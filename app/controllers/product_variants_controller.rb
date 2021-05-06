@@ -27,6 +27,8 @@ class ProductVariantsController < ApplicationController
   end
 
   def destroy
+    @product_variant = Product_Variant.find(params[:id])
+    @product_variant.destroy
   end
 
 
