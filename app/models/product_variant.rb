@@ -2,6 +2,7 @@ class ProductVariant < ApplicationRecord
 
 
   has_many :order_items, dependent: :destroy
+  belongs_to :product
 
   def name_of_method
     "#{item} / #{color} / #{size} / $#{price_in_dollars}"

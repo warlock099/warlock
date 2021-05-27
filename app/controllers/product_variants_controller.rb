@@ -31,7 +31,7 @@ class ProductVariantsController < ApplicationController
 
 
   def form_params
-    Params.require(:product_variant).permit(:item, :size, :color, :price)
+    Params.require(:product_variant).permit(:item, :size, :color, :price, :cover_image)
   end
 
 end
