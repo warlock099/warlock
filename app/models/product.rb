@@ -20,9 +20,16 @@ class Product < ApplicationRecord
   mount_uploader :image_2, ProductImageUploader
   mount_uploader :image_3, ProductImageUploader
 
-  Product.find_each do |product|
-  product.cover_image.recreate_versions!
-end
+
+
+
+
+
+  def recreate
+    Product.find_each do |product|
+    product.cover_image.recreate_versions!
+  end
+  end
 
 
   def total_quantity
