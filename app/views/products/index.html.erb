@@ -6,9 +6,7 @@
   <section class="product">
     <section class="product-cover">
     <%= link_to product_path(product) do %>
-    <div class="product-image-box">
       <%= image_tag product.cover_image.store.url, class: "product-img" %>
-    </div>
     <% end %>
       </section>
       <section class="Product-text">
