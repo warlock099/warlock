@@ -23,10 +23,11 @@ class Product < ApplicationRecord
 
 
 
-
-    Product.find_each do |product|
+  def recreate
+      Product.find_each do |product|
       product.cover_image.recreate_versions! if product.cover_image?
     end
+  end
 
 
   def total_quantity
