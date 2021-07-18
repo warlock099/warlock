@@ -24,12 +24,9 @@ class Product < ApplicationRecord
 
 
 
-
-  def recreate
     Product.find_each do |product|
-    product.cover_image.recreate_versions!
-  end
-  end
+      product.cover_image.recreate_versions! if product.cover_image?
+    end
 
 
   def total_quantity
