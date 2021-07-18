@@ -1,10 +1,14 @@
+
+
 <div class="products-grid">
 <% @products.each do |product| %>
 <% if product.is_print != true %>
   <section class="product">
     <section class="product-cover">
     <%= link_to product_path(product) do %>
-    <%= image_tag product.cover_image.store.url, class: "product-img" %>
+    <div class="product-image-box">
+      <%= image_tag product.cover_image.store.url, class: "product-img" %>
+    </div>
     <% end %>
       </section>
       <section class="Product-text">

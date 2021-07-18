@@ -34,7 +34,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   end
 
   version :store do
-    process resize_to_fill: [ 200, 200]
+    process resize_to_fit: [ 300, 300]
   end
 
   version :nft do
@@ -42,7 +42,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   end
 
   version :show do
-    process resize_to_fill: [298, 290]
+    process resize_to_fit: [400, 400]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
