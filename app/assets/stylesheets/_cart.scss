@@ -21,7 +21,17 @@ $silver2: #B2B2B2;
 $silver3: #CCCCCC;
 $background-silver: #F2F2F2;
 
+div.cart-buttons-flex {
+  width: 800px;
+  margin: 16px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+p.subtotal {
+  margin: 0;
+}
 
 .remove {
   display: inline-block;
@@ -31,13 +41,19 @@ $background-silver: #F2F2F2;
 }
 
 .checkout-button {
-  margin: 32px 0;
-  display: inline-block;
-  padding: 16px 24px;
+  border: none;
+  display: block;
+  padding: 20px 24px;
   background-color: $orange1;
   color: white;
   letter-spacing: 1px;
   text-transform: uppercase;
+  cursor: pointer;
+  font-family: $body-font;
+
+  a {
+    display:inline-block;
+  }
 }
 
 tr.cart {
@@ -52,6 +68,7 @@ tbody {
 }
 
 table {
+    margin-top: 64px;
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
@@ -81,18 +98,22 @@ table {
      }
 
 div.checkout-continue {
-    margin-left: 900px;
-    margin-top: 48px;
-     }
+  width: 800px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 48px auto;
+  font-size: 21px;
+}
 
   .back-to-shop {
-    margin-top: 16px;
-    display: inline-block;
+    display: block;
     padding: 16px 24px;
     border: 2px solid $blue2;
     color: $blue2;
     letter-spacing: 1px;
     text-transform: uppercase;
+    cursor: pointer;
+    font-family: $body-font;
   }
 
 h2.empty {

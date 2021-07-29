@@ -42,18 +42,24 @@
 </table>
 
 <div class="checkout-continue">
-<p>
+<p class="subtotal">
   Subtotal: <%= number_to_currency @current_cart.total_price_in_dollars %>
 </p>
 
-<div>
-  <%= link_to "Checkout", new_order_path, :class => "checkout-button" %>
 </div>
 
-<div>
-  <%= link_to "Back to shop", root_path, :class => "back-to-shop" %>
-</div>
+<div class="cart-buttons-flex">
+  <%= link_to root_path do %>
+  <button class="back-to-shop">
+    Back to shop
+  </button>
+  <% end %>
 
+  <%= link_to new_order_path do %>
+  <button class="checkout-button">
+    Checkout
+  </button>
+  <% end %>
 </div>
 
 

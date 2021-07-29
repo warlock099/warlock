@@ -23,11 +23,11 @@
 
 
          </div>
+  <%= link_to products_path do %>
+    <button class="back-to-front-page">
+      <span class="back-to-front" > <%= image_tag "backarrow2.svg", :class => "back_arrow" %>  Back to front page</span>
+    </button>
+  <% end %>
 
-     <div class="back-to-front-page">
-       <%= link_to products_path do %>
-    <span class="back-to-front" > <%= image_tag "backarrow2.svg", :class => "back_arrow" %>  Back to front page</span>
-        <% end %>
-      </div>
   </div>
 </section>

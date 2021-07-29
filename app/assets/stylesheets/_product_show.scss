@@ -49,16 +49,19 @@ section.product-grid-show {
   margin-right: 0;
 }
 
-.back-to-front {
-  display: inline-block;
+button.back-to-front-page {
+  text-decoration: none;
+  display: block;
   padding: 12px 16px;
   border: 2px solid $blue2;
   color: $blue2;
   padding: 16px 40px;
   width: 300px;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 48px;
   font-weight: 400;
+  font-family: $body-font;
+  cursor: pointer;
 }
 
 
