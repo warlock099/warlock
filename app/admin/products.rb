@@ -23,6 +23,7 @@ ActiveAdmin.register Product do
     column :is_sold_out
     column "Product variants" do |product|
       product.product_variants.each do |product_variant|
+        product_variant
       end
   end
     actions
