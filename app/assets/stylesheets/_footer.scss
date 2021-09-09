@@ -26,21 +26,12 @@ $background-silver: #F2F2F2;
 
 
 footer {
-  // display: flex;
-  // justify-content: center;
-  margin-top: 80px;
-  padding: 32px;
   color: $black1;
-  // margin-left: 160px;
-  // margin-right: 160px;
+  margin-top: 12rem;
 }
 
 .footer-flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  span.first {
-    margin-right: 24rem;
-  }
 }
