@@ -48,6 +48,10 @@ gem 'mini_magick'
 
 gem 'printful_api'
 
+gem 'httparty'
+gem "http"
+gem 'json', '~> 2.6', '>= 2.6.1'
+
 gem 'greensock-rails'
 
 # storage

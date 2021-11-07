@@ -483,7 +483,7 @@
   const form = document.querySelector('#new_order');
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    // Step 1: POST request to create payment intent
+    // Step 1: POST request to create payment inten
 
     fetch('/payment_intents', {
       method: 'POST',
@@ -518,5 +518,6 @@
       console.error('Error:', error);
     });
   });
+
    })();
 </script>
