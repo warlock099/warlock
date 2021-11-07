@@ -5,7 +5,7 @@ ActiveAdmin.register Order do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :first_name, :last_name, :email, :address_1, :address_2, :city, :postal_code, :country, :stripe_payment_id
+  permit_params :first_name, :last_name, :email, :address_1, :address_2, :city, :state, :postal_code, :country, :stripe_payment_id
 
 
   index do
@@ -18,6 +18,7 @@ ActiveAdmin.register Order do
     column :address_2
     column :city
     column :postal_code
+    column :state
     column :country
     column :last_name
     column :first_name
@@ -35,6 +36,14 @@ ActiveAdmin.register Order do
         row "Total Amount ($)" do |order|
           order.total_price_in_dollars
         end
+        row :address_1
+        row :address_2
+        row :city
+        row :postal_code
+        row :state
+        row :country
+        row :last_name
+        row :first_name
       end
     end
 

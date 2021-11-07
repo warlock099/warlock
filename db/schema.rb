@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_31_094145) do
+ActiveRecord::Schema.define(version: 2021_11_07_154324) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_094145) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "stripe_payment_id"
+    t.string "state"
   end
 
   create_table "product_variants", force: :cascade do |t|

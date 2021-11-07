@@ -19,7 +19,10 @@ class OrdersController < ApplicationController
     @order = Order.new(form_params)
     @order.add_from_cart(@current_cart)
 
+
     if @order.save
+
+
 
 
 
@@ -43,7 +46,7 @@ private
 
   def form_params
   params.require(:order).permit(:first_name, :last_name, :email,
-    :country, :address_1, :address_2, :city, :postal_code, :stripe_payment_id)
+    :country, :address_1, :address_2, :city, :postal_code, :state, :stripe_payment_id)
   end
 
 

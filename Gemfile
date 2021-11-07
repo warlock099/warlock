@@ -46,6 +46,8 @@ gem 'country_select'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
+gem 'printful_api'
+
 gem 'greensock-rails'
 
 # storage
