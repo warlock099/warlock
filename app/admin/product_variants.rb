@@ -5,7 +5,7 @@ ActiveAdmin.register ProductVariant do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :item, :size, :color, :price, :product_id, :title
+  permit_params :item, :size, :color, :price, :product_id, :title, :sync_variant_id, :printfile_url
 
 
 
@@ -17,6 +17,8 @@ ActiveAdmin.register ProductVariant do
      f.input :price
      f.input :size
      f.input :product_id
+     f.input :sync_variant_id
+     f.input :printfile_url
    end
 
    f.actions
@@ -50,6 +52,8 @@ ActiveAdmin.register ProductVariant do
        row :size
        row :color
        row :price
+       row :sync_variant_id
+       row :printfile_url
      end
    end
 
