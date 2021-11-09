@@ -59,17 +59,13 @@ def self.post_printful_order(order)
             "country_code": order.country,
             "zip": order.postal_code
         },
-        "items": [
-            {
-                "sync_variant_id": 2877024224,
-                "quantity": 1,
-                "files": [
-                    {
-                        "url": "http://example.com/files/posters/poster_1.jpg"
-                    }
-                ]
+        "items": order.order_items.map{ |item| 
+          {
+              "sync_variant_id": item.product_variant.sync_variant_id,
+              "quantity": item.quantity,
+              "files": [ { "url": item.product_variant.printfile_url } ]
             }
-        ]
+          }
     }.to_json,
     :headers => { 'Content-Type' => 'application/json', 'Authorization' => Rails.application.credentials[Rails.env.to_sym][:printful_key] } )
   end
