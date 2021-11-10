@@ -26,6 +26,13 @@ class ProductVariantsController < ApplicationController
    end
   end
 
+  def edit
+  end
+
+  def update
+    render "edit"
+  end
+
   def destroy
   end
 
