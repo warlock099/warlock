@@ -39,6 +39,8 @@ ActiveAdmin.register ProductVariant do
    column :size
    column :color
    column :price
+   column :sync_variant_id
+   column :printfile_url
    actions
  end
 
