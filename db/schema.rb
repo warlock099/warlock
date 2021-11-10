@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_09_225746) do
+ActiveRecord::Schema.define(version: 2021_11_10_133723) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -146,7 +146,7 @@ ActiveRecord::Schema.define(version: 2021_11_09_225746) do
     t.integer "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "sync_variant_id"
+    t.string "sync_variant_id"
     t.string "printfile_url"
     t.index ["product_id"], name: "index_product_variants_on_product_id"
   end

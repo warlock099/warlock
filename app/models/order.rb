@@ -59,9 +59,9 @@ def self.post_printful_order(order)
             "country_code": order.country,
             "zip": order.postal_code
         },
-        "items": order.order_items.map{ |item| 
+        "items": order.order_items.map{ |item|
           {
-              "sync_variant_id": item.product_variant.sync_variant_id,
+              "sync_variant_id": item.product_variant.sync_variant_id.to_i,
               "quantity": item.quantity,
               "files": [ { "url": item.product_variant.printfile_url } ]
             }
