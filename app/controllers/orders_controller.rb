@@ -26,6 +26,10 @@ class OrdersController < ApplicationController
     if @order.save
 
 
+    OrderConfirmationMailer.Confirmation(@order).deliver_now
+    OrderConfirmationMailer.newOrder(@order).deliver_now
+
+
 
       reset_session
 
