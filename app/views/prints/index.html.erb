@@ -1,0 +1,26 @@
+
+
+<div class="products-grid">
+
+
+<% @products.each do |product| %>
+<% if product.is_print %>
+  <section class="product">
+    <section class="product-cover">
+    <%= link_to product_path(product) do %>
+    <%= image_tag product.cover_image.store.url, class: "product-img" %>
+    <% end %>
+      </section>
+      <section class="Product-text">
+        <h3><%= product.title %></h3>
+      </section>
+  </section>
+<% end %>
+<% end %>
+</div>
+
+
+    <div style="margin-top: 8rem; display: flex; justify-content: center; font-size: 56px">
+      Prints coming soon...
+    </div>
+

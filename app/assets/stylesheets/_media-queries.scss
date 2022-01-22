@@ -1,0 +1,21 @@
+@media screen and (min-width: 320px) and (max-width: 1050px) {
+    span.nav-links {
+      display: none;
+  }
+
+  #hamburger {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+
+}
+
+
+@media screen and (min-width: 1051px) {
+
+  #hamburger {
+    display: none;
+    cursor: pointer;
+  }
+}

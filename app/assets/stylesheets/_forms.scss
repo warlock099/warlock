@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400);
+@import url(https://fonts.googleapis.com/css?family=Russo+One);
+
+
+
+$body-font: "Play";
+$heading-font: "Days One";
+$body-new: "Staatliches";
+$orange1: #F46C34;
+$orange2: #F68151;
+$orange3: #F8A17C;
+$red1: #E64256;
+$red2: #EC6F7E;
+$red3: #F29CA6;
+$green1: #00A84F;
+$green2: #00E56C;
+$green3: #1AFF85;
+$blue1: #0052A3;
+$blue2: #006BD6;
+$blue3: #0A85FF;
+$black1: #333333;
+$black2: #666666;
+$black3: #999999;
+$silver1: #989898;
+$silver2: #B2B2B2;
+$silver3: #CCCCCC;
+$background-silver: #F2F2F2;
+
+
+.select_product {
+  padding: 16px 24px;
+  border: 2px solid rgb(20, 190, 52);
+  color: rgb(20, 190, 52);
+  margin-top: 8px;
+  font-family: $body-font;
+  font-size: 14px;
+  width: 360px;
+  font-weight: 400;
+}
+
+.select-quantity {
+  padding: 16px 24px;
+  border: 2px solid rgb(20, 190, 52);
+  color: rgb(20, 190, 52);
+  margin-top: 8px;
+  font-family: $body-font;
+  font-size: 14px;
+  font-weight: 400;
+  width: 64px;
+}

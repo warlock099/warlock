@@ -6,7 +6,9 @@ ruby '2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+group :development do
+  gem 'sqlite3', '~> 1.4'
+end
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -35,11 +37,22 @@ end
 
 gem 'active_link_to'
 
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
 gem 'simple_form'
+gem 'country_select'
 
 # uploads
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+
+gem 'printful_api'
+
+gem 'httparty'
+gem "http"
+gem 'json', '~> 2.6', '>= 2.6.1'
+
+gem 'greensock-rails'
 
 # storage
 gem 'fog-aws'
@@ -47,6 +60,11 @@ gem 'fog-aws'
 # admin
 gem 'activeadmin'
 gem 'devise'
+
+gem 'stripe'
+
+# SEO
+gem 'friendly_id', '~> 5.4.0'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -63,6 +81,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+# for live site deployment
+group :production do
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

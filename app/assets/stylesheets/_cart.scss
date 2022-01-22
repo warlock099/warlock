@@ -1,0 +1,126 @@
+$body-font: "Play";
+$heading-font: "Days One";
+$body-new: "Staatliches";
+$orange1: #F46C34;
+$orange2: #F68151;
+$orange3: #F8A17C;
+$red1: #E64256;
+$red2: #EC6F7E;
+$red3: #F29CA6;
+$green1: #00A84F;
+$green2: #00E56C;
+$green3: #1AFF85;
+$blue1: #0052A3;
+$blue2: #006BD6;
+$blue3: #0A85FF;
+$black1: #333333;
+$black2: #666666;
+$black3: #999999;
+$silver1: #989898;
+$silver2: #B2B2B2;
+$silver3: #CCCCCC;
+$background-silver: #F2F2F2;
+
+div.cart-buttons-flex {
+  width: 800px;
+  margin: 16px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p.subtotal {
+  margin: 0;
+}
+
+.remove {
+  display: inline-block;
+  padding: 8px 8px;
+  border: 2px solid $red2;
+  color: $red2;
+}
+
+.checkout-button {
+  border: none;
+  display: block;
+  padding: 20px 24px;
+  background-color: $orange1;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: $body-font;
+
+  a {
+    display:inline-block;
+  }
+}
+
+tr.cart {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid $green2;
+  padding: 24px;
+}
+
+tbody {
+  margin-top: 24px;
+}
+
+table {
+    margin-top: 64px;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    text-align: center;
+
+    // th {
+    //   padding-left: 4rem;
+    // }
+
+    th.product-head {
+      text-align: center;
+    }
+
+    td {
+      padding: 12px 0;
+    }
+
+    // td {
+    //     padding: 12px 0 12px 4rem;
+    // }
+
+    // img {
+    //   display: block;
+    //   text-align: center;
+    // }
+     }
+
+div.checkout-continue {
+  width: 800px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 48px auto;
+  font-size: 21px;
+}
+
+  .back-to-shop {
+    display: block;
+    padding: 16px 24px;
+    border: 2px solid $blue2;
+    color: $blue2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: $body-font;
+  }
+
+h2.empty {
+  font-family: "Play";
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  text-transform: none;
+  transform: translateY(6rem);
+}

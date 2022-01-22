@@ -1,0 +1,69 @@
+
+<% if @current_cart.order_items.any? %>
+
+<table>
+  <thead>
+    <tr>
+      <th class="product-head">Product</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>Total</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @current_cart.order_items.each do |item| %>
+
+      <tr class="cart">
+        <td>
+          <%= image_tag item.product_variant.product.cover_image.thumb.url %>
+        </td>
+        <td>
+          <%= item.product_variant.item %>/<%= item.product_variant.size %>/<%= item.product_variant.color %>
+        </td>
+        <td>
+          <%= number_to_currency item.product_variant.price_in_dollars %>
+        </td>
+        <td>
+          <%= item.quantity %>
+        </td>
+        <td>
+          <%= number_to_currency item.quantity * item.product_variant.price_in_dollars %>
+        </td>
+        <td>
+          <%= link_to "Remove", product_variant_order_item_path(item.product_variant, item), method: :delete, :class => "remove" %>
+        </td>
+
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<div class="checkout-continue">
+<p class="subtotal">
+  Subtotal: <%= number_to_currency @current_cart.total_price_in_dollars %>
+</p>
+
+</div>
+
+<div class="cart-buttons-flex">
+  <%= link_to root_path do %>
+  <button class="back-to-shop">
+    Back to shop
+  </button>
+  <% end %>
+
+  <%= link_to new_order_path do %>
+  <button class="checkout-button">
+    Checkout
+  </button>
+  <% end %>
+</div>
+
+
+
+<% else %>
+  <h2 class="empty">Your cart is empty</h2>
+<% end %>

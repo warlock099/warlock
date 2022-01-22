@@ -1,0 +1,134 @@
+$body-font: "Play";
+$heading-font: "Days One";
+$body-new: "Staatliches";
+$orange1: #F46C34;
+$orange2: #F68151;
+$orange3: #F8A17C;
+$red1: #E64256;
+$red2: #EC6F7E;
+$red3: #F29CA6;
+$green1: #00A84F;
+$green2: #00E56C;
+$green3: #1AFF85;
+$blue1: #0052A3;
+$blue2: #006BD6;
+$blue3: #0A85FF;
+$black1: #333333;
+$black2: #666666;
+$black3: #999999;
+$silver1: #989898;
+$silver2: #B2B2B2;
+$silver3: #CCCCCC;
+$background-silver: #F2F2F2;
+
+div.back-to-cart {
+  margin-left: 12rem;
+  margin-bottom: 80px;
+}
+
+div.below {
+  margin-top: 56px;
+}
+
+.StripeElement {
+  margin-top: 64px;
+  padding: 16px 16px;
+  border-style: none;
+  box-shadow: 2px 0px 0px $blue3, inset 0 2px 5px $blue3;
+  border-radius: 4px;
+  width: 360px;
+  background-color: $blue2;
+  color: white;
+  margin-bottom: 0;
+
+}
+
+div.checkout-flex {
+
+  h1 {
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  margin-top: 24px;
+  margin-left: 12rem;
+  display: flex;
+  // flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+section.order-total {
+
+  font-family: "Aldrich";
+
+  h2 {
+    margin-bottom: 16px;
+    margin-top: 0;
+    font-family: "Aldrich";
+  }
+
+  margin-left: 8rem;
+  font-size: 24px;
+  transform:translateY(4rem);
+  background-color: $green3;
+  color: $black1;
+  padding: 32px 32px;
+
+  p.taxes  {
+    margin-top: 2em;
+    font-size: 12px;
+  }
+
+  hr {
+    margin: 16px 0;
+    color: $black1;
+    border: 0.5px solid $black1;
+  }
+}
+
+section.order-form {
+  margin-bottom: 80px;
+}
+
+section.name-flex {
+  display: flex;
+}
+
+div.field {
+  margin-top: 12px;
+}
+
+div.field-last-name {
+  margin-left: 1rem;
+  margin-top: 12px;
+}
+
+div.field-postal {
+  margin-left: 1rem;
+  margin-top: 12px;
+}
+
+div.field-address2 {
+  margin-top: 12px;
+  margin-left: 1rem;
+}
+
+section.city-postal-flex {
+  display: flex;
+}
+
+
+.select-location {
+  padding: 8px 24px;
+  border: 2px solid rgb(20, 190, 52);
+  color: rgb(20, 190, 52);
+  margin-top: 8px;
+  font-family: $body-font;
+  font-size: 14px;
+  font-weight: 400;
+}

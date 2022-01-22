@@ -1,0 +1,31 @@
+
+
+<section>
+
+<% if @nfts.present? %>
+
+  <% @nfts.each do |nft| %>
+<div class="nft">
+  <div class="nft-image">
+    <%= link_to nft.link do %>
+    <%= image_tag nft.image.nft.url, class: "nft-cover-image" %>
+    <% end %>
+  </div>
+  <div class="nft-other">
+    <%= link_to nft.link do %>
+  <h2><%= nft.title %></h2>
+  <p><%= nft.date %></p>
+  <p><%= simple_format nft.description %></p>
+    <% end %>
+  </div>
+</div>
+  <% end %>
+
+  <% else %>
+
+    <div style="margin-top: 10rem; display: flex; justify-content: center; font-size: 56px">
+      NFT's coming soon...
+    </div>
+
+    <% end %>
+</section>

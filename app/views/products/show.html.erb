@@ -1,0 +1,33 @@
+
+<section class="product-grid-show">
+
+        <%= image_tag @product.cover_image.show.url, :class => "product", alt: "product-img"%>
+
+   <div class="product_form">
+     <div class="flex">
+         <h2><%= @product.title %></h2>
+
+         <div class="product-description">
+             <p><%= @product.description %></p>
+         </div>
+     </div>
+
+     <div class="add-to-cart-form">
+      <%= simple_form_for [@product_variant, @order_item] do |f| %>
+      <%= f.input :quantity, label: "Quantity:", input_html: { class: 'select-quantity', min: '1', step: '1' } %>
+      <%= f.association :product_variant, include_blank: false, label: "Product select:", collection: @product.product_variants.map{ |p| [p.name_of_method, p.id]  }, :required => false, input_html: { class: 'select_product' }, label_html: { class: 'product_select'}  %>
+
+      <%= f.button :submit, "ADD TO CART" %>
+    <% end %>
+
+
+
+         </div>
+  <%= link_to products_path do %>
+    <button class="back-to-front-page">
+      <span class="back-to-front" > <%= image_tag "backarrow2.svg", :class => "back_arrow" %>  Back to front page</span>
+    </button>
+  <% end %>
+
+  </div>
+</section>
