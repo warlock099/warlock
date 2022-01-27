@@ -2,17 +2,17 @@
 
 <div class="products-grid">
 <% @products.each do |product| %>
-<% if product.is_print != true %>
-  <section class="product">
-    <section class="product-cover">
-    <%= link_to product_path(product) do %>
-      <%= image_tag product.cover_image.store.url, class: "product-img", alt: "product-img" %>
+  <% if product.is_print != true %>
+    <section class="product">
+      <section class="product-cover">
+      <%= link_to product_path(product) do %>
+        <%= image_tag product.cover_image.store.url, class: "product-img", alt: "product-img" %>
+      <% end %>
+        </section>
+        <section class="Product-text">
+          <h3><%= product.title %></h3>
+        </section>
+    </section>
     <% end %>
-      </section>
-      <section class="Product-text">
-        <h3><%= product.title %></h3>
-      </section>
-  </section>
   <% end %>
-<% end %>
 </div>

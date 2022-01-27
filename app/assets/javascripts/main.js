@@ -1,4 +1,4 @@
-
+console.log('main.js');
 $(document).ready( () => {
   console.log('loaded');
   $('#hamburger').on("click", () => {
