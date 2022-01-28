@@ -1,0 +1,37 @@
+<div class="hamburger-nav" style="display: none;">
+  <ion-icon name="close-sharp" id="close-nav" size="large"></ion-icon>
+  <div class="ham-nav-flex">
+    <div class="ham-nav-links">
+      <%= link_to "Apparel" , products_path, id: "red" %>
+        <%= link_to "Prints" , prints_path, id: "blue" %>
+          <%= link_to "NFTs" , nfts_path, id: "orange" %>
+            <%= link_to "Contact" , about_path, id: "green" %>
+    </div>
+  </div>
+</div>
+
+<header>
+  <%= link_to root_path do %>
+    <%= image_tag("Wlogo.svg", alt: "Warlock-Logo" ) %>
+  <% end %>
+
+  <nav>
+    <span>
+      <span class="nav-links">
+        <%= link_to "Apparel" , products_path, id: "red" %>
+          <%= link_to "Prints" , prints_path, id: "blue" %>
+            <%= link_to "NFTs" , nfts_path, id: "orange" %>
+              <%= link_to "Contact" , about_path, id: "green" %>
+      </span>
+
+      <%= image_tag "HamburgerWarlock.svg" , alt: "hamburger-icon" , id: "hamburger" %>
+
+        <%= link_to cart_path do %>
+          <ion-icon name="cart-outline" />
+          <span class="quantity">
+            <%= @current_cart.total_quantity %>
+          </span>
+        <% end %>
+    </span>
+  </nav>
+</header>

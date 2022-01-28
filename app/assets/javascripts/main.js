@@ -1,4 +1,3 @@
-
 $(document).ready( () => {
   console.log('loaded');
   $('#hamburger').on("click", () => {
@@ -9,5 +8,4 @@ $(document).ready( () => {
   $('#close-nav').on("click", () => {
     $('.hamburger-nav').toggle();
   })
-
 })
